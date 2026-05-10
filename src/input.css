@@ -1,1 +1,47 @@
 @import 'tailwindcss';
+
+@theme {
+  --color-primary: #ff623e;
+  --color-neutral: #0a0d12;
+  --color-neutral-100: #181d27;
+  --color-line: #252b37;
+  --color-black: #0a0d12;
+  --color-blurb: #a4a7ae;
+  --color-card: #0a0c12;
+  --color-black-900: #000;
+  --color-mask: linear-gradient(
+    269.44deg,
+    #000000 36.1%,
+    rgba(0, 0, 0, 0) 89.71%
+  );
+  --breakpoint-xl: 1160px;
+  --text-6xl: 56px;
+  --shadow-btn: inset 4px 4px 4px rgba(255, 255, 255, 0.25);
+  --font-quicksand: 'Quicksand', sans-serif;
+  --animate-infinite-scroll: infinite-scroll 40s linear infinite;
+
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+.btn-primary {
+  @apply bg-primary text-white w-full flex p-2 rounded-full text-base font-bold leading-7 text-center justify-center shadow-btn hover:shadow-none lg:text-base lg:leading-7.5 lg:py-2.5 lg:px-16 lg:w-fit;
+}
+.left-mask {
+  @apply before:block before:w-12 lg:before:w-3xs before:h-25 lg:before:h-48 before:[background:var(--color-mask)] before:absolute before:left-0 before:top-0 before:z-20 before:-rotate-180;
+}
+.rigth-mask {
+  @apply after:block after:w-12 after:h-25 lg:after:h-48 lg:after:w-3xs after:[background:var(--color-mask)] after:absolute after:right-0 after:top-0 after:z-20;
+}
+.heading-2 {
+  @apply text-center font-bold text-[28px] lg:text-[40px] text-white;
+}
+.blurb-heading {
+  @apply text-blurb text-center text-sm mt-2.5 lg:text-lg;
+}
